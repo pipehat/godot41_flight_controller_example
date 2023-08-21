@@ -1,22 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbglp6seply6y"]
+[gd_scene load_steps=4 format=3 uid="uid://bbglp6seply6y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eephg"]
 size = Vector3(3.41247, 1.14946, 2.50144)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n21i8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3ldr"]
+albedo_color = Color(0.792157, 0.737255, 0.501961, 1)
+
 [node name="plane" type="CharacterBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_eephg")
 
-[node name="model" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="fuselage" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, -4.37114e-08, -0.75, 0, 1, -3.27835e-08, 0, 0, 0)
 sides = 6
 material = SubResource("StandardMaterial3D_n21i8")
 
-[node name="wings" type="CSGBox3D" parent="model"]
-transform = Transform3D(3.33283, 0, 0, 0, 0.512583, 0, 0, 1.77636e-15, 0.153431, 0, 0.105159, -4.59665e-09)
+[node name="wings" type="CSGBox3D" parent="."]
+transform = Transform3D(3.33283, 0, 0, 0, -2.24057e-08, -0.153431, 0, 0.512583, -6.70668e-09, 0, 3.10862e-15, 0.105159)
 
-[node name="tail" type="CSGBox3D" parent="model"]
-transform = Transform3D(0.120545, 0, 0, 0, 0.512583, -1.77636e-15, 0, 3.55271e-15, 0.660861, 0, 0.941071, -0.401692)
+[node name="flap_axis_right" type="CSGBox3D" parent="."]
+transform = Transform3D(1.02031, 0, 0, 0, -2.50257e-09, -0.0437036, 0, 0.0572522, -1.91035e-09, 1.0063, 2.67326e-15, 0.39245)
+
+[node name="flap_right" type="CSGBox3D" parent="flap_axis_right"]
+transform = Transform3D(1, 0, 0, 0, 2.72094, -3.55271e-15, 0, -1.42109e-14, 1, 0, 1.53106, -8.76721e-08)
+material = SubResource("StandardMaterial3D_r3ldr")
+
+[node name="flap_axis_left" type="CSGBox3D" parent="."]
+transform = Transform3D(1.02031, 0, 0, 0, -2.50257e-09, -0.0437036, 0, 0.0572522, -1.91035e-09, -1.05513, 0, 0.392)
+
+[node name="flap_left" type="CSGBox3D" parent="flap_axis_left"]
+transform = Transform3D(1, 0, 0, 0, 2.72094, -3.55271e-15, 0, -1.42109e-14, 1, -0.00476933, 1.53706, -8.80156e-08)
+material = SubResource("StandardMaterial3D_r3ldr")
+
+[node name="tail" type="CSGBox3D" parent="."]
+transform = Transform3D(0.120545, 0, 0, 0, -2.24057e-08, -0.660861, 0, 0.512583, -2.88872e-08, 0, 0.401692, 0.941071)
