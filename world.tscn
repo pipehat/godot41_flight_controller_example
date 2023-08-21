@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm3gpusw5c8cg"]
+
+[ext_resource type="PackedScene" uid="uid://bbglp6seply6y" path="res://plane.tscn" id="1_p4yrd"]
+[ext_resource type="Script" path="res://plane.gd" id="2_h0fqm"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h8emp"]
+
+[sub_resource type="Sky" id="Sky_m2kjy"]
+sky_material = SubResource("PanoramaSkyMaterial_h8emp")
+
+[sub_resource type="Environment" id="Environment_si7lc"]
+background_mode = 1
+background_color = Color(0.462745, 0.619608, 0.74902, 1)
+sky = SubResource("Sky_m2kjy")
+ambient_light_source = 2
+ambient_light_color = Color(0.694118, 0.796078, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrkjh"]
+shading_mode = 0
+albedo_color = Color(0.141176, 0.34902, 0.141176, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aeatu"]
+albedo_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1gh4"]
+
+[node name="world" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_si7lc")
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00982607, 0.999952, 0, -0.999952, -0.00982607, -124.42, 242.899, 0)
+
+[node name="plane" parent="." instance=ExtResource("1_p4yrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18071, 7.88445, 0)
+script = ExtResource("2_h0fqm")
+
+[node name="Camera3D" type="Camera3D" parent="plane"]
+transform = Transform3D(1, 0, 0, 0, 0.99948, 0.0322306, 0, -0.0322306, 0.99948, -0.0556016, 0.872339, 5.01369)
+
+[node name="ground" type="CSGBox3D" parent="."]
+transform = Transform3D(999, 0, 0, 0, 0.1, 0, 0, 0, 999, 0, 0, 0)
+material = SubResource("StandardMaterial3D_lrkjh")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground"]
+transform = Transform3D(0.00269363, 0, 0, 0, 50, 0, 0, 0, 0.003003, -0.0226298, 26.1523, -0.0586451)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground"]
+transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, 0.0486782, 26.1523, -0.0273116)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="ground"]
+transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, 0.0231075, 26.1523, -0.0273116)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="ground"]
+transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, 0.0231075, 26.1523, -0.115635)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="ground"]
+transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, -0.00721559, 26.1523, -0.151846)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ground"]
+transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, -0.0153978, 26.1523, -0.0187985)
+
+[node name="road" type="CSGBox3D" parent="."]
+transform = Transform3D(2.269, 0, 0, 0, 0.05, 0, 0, 0, 2267.21, 0, 0.1, 0)
+material = SubResource("StandardMaterial3D_aeatu")
+
+[node name="clouds" type="Node3D" parent="."]
+
+[node name="cloud" type="CSGSphere3D" parent="clouds"]
+transform = Transform3D(-33.3781, -8.74228e-08, 0, 2.918e-06, -1, 0, 0, 0, 7.62826, 0, 90.0811, -288.915)
+radius = 5.0
+radial_segments = 5
+rings = 4
+material = SubResource("StandardMaterial3D_y1gh4")
+
+[node name="cloud4" type="CSGSphere3D" parent="clouds"]
+transform = Transform3D(-30.7508, -8.05415e-08, 2.9665, -4.25247, -0.944812, -2.30241, 12.2638, -0.327614, 6.63996, -191.891, 143.628, -216.505)
+radius = 5.0
+radial_segments = 5
+rings = 4
+material = SubResource("StandardMaterial3D_y1gh4")
+
+[node name="cloud2" type="CSGSphere3D" parent="clouds"]
+transform = Transform3D(-27.5067, 0.0816028, 0, -1.99631, -1.12438, 0, 0, 0, 9.09917, -75.51, 94.7362, -321.381)
+radius = 5.0
+radial_segments = 5
+rings = 4
+material = SubResource("StandardMaterial3D_y1gh4")
+
+[node name="cloud3" type="CSGSphere3D" parent="clouds"]
+transform = Transform3D(-21.8964, 0.012575, 0.184618, -2.31451, -0.138777, -1.24323, 0.552724, -0.0829571, 2.10774, 85.9614, 96.9086, -220.81)
+radius = 5.0
+radial_segments = 5
+rings = 4
+material = SubResource("StandardMaterial3D_y1gh4")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="HUD"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 237.0
+offset_bottom = 104.0
+
+[node name="Label" type="Label" parent="HUD/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Simple flight control demo.
+Roll : left | right
+Pitch : up | down"
