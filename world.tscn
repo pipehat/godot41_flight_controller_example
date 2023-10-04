@@ -43,24 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 0.99948, 0.0322306, 0, -0.0322306, 0.99948, 
 transform = Transform3D(999, 0, 0, 0, 0.1, 0, 0, 0, 999, 0, 0, 0)
 material = SubResource("StandardMaterial3D_lrkjh")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.00269363, 0, 0, 0, 50, 0, 0, 0, 0.003003, -0.0226298, 26.1523, -0.0586451)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, 0.0486782, 26.1523, -0.0273116)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, 0.0231075, 26.1523, -0.0273116)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, 0.0231075, 26.1523, -0.115635)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, -0.00721559, 26.1523, -0.151846)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.003003, 0, 0, 0, 50, 0, 0, 0, 0.003003, -0.0153978, 26.1523, -0.0187985)
-
 [node name="road" type="CSGBox3D" parent="."]
 transform = Transform3D(2.269, 0, 0, 0, 0.05, 0, 0, 0, 2267.21, 0, 0.1, 0)
 material = SubResource("StandardMaterial3D_aeatu")
@@ -117,3 +99,50 @@ grow_vertical = 2
 text = "Simple flight control demo.
 Roll : left | right
 Pitch : up | down"
+
+[node name="buildings" type="Marker3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="buildings"]
+transform = Transform3D(2.35744, 0, 0, 0, 5.90408, 0, 0, 0, 4.03505, -11.1649, 3.06516, -35.4364)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="buildings"]
+transform = Transform3D(0.405516, 0, 3.9749, 0, 5.90408, 0, -2.32231, 0, 0.694089, 7.42327, 3.06516, -28.6585)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="buildings"]
+transform = Transform3D(0.0717873, 0, -4.03318, 0, 5.90408, 0, 2.35635, 0, 0.122873, 11.9474, 1.7639, -65.2327)
+
+[node name="buildings2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.762, 0, -45.3889)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="buildings2"]
+transform = Transform3D(2.35744, 0, 0, 0, 5.90408, 0, 0, 0, 4.03505, -11.1649, 3.06516, -35.4364)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="buildings2"]
+transform = Transform3D(0.405516, 0, 3.9749, 0, 5.90408, 0, -2.32231, 0, 0.694089, 7.42327, 3.06516, -28.6585)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="buildings2"]
+transform = Transform3D(0.0717873, 0, -4.03318, 0, 5.90408, 0, 2.35635, 0, 0.122873, 11.9474, 1.7639, -65.2327)
+
+[node name="buildings3" type="Marker3D" parent="."]
+transform = Transform3D(-0.150122, 0, -0.988667, 0, 1, 0, 0.988667, 0, -0.150122, 0.322918, 0, -96.0663)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="buildings3"]
+transform = Transform3D(2.35744, 0, 0, 0, 5.90408, 0, 0, 0, 4.03505, -11.1649, 3.06516, -35.4364)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="buildings3"]
+transform = Transform3D(0.405516, 0, 3.9749, 0, 5.90408, 0, -2.32231, 0, 0.694089, 7.42327, 3.06516, -28.6585)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="buildings3"]
+transform = Transform3D(0.0717873, 0, -4.03318, 0, 5.90408, 0, 2.35635, 0, 0.122873, 11.9474, 1.7639, -65.2327)
+
+[node name="buildings4" type="Marker3D" parent="."]
+transform = Transform3D(0.584335, 0, -0.811513, 0, 1, 0, 0.811513, 0, 0.584335, 0.322918, 0, -233.656)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="buildings4"]
+transform = Transform3D(2.35744, 0, 0, 0, 5.90408, 0, 0, 0, 4.03505, -11.1649, 3.06516, -35.4364)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="buildings4"]
+transform = Transform3D(0.405516, 0, 3.9749, 0, 5.90408, 0, -2.32231, 0, 0.694089, 7.42327, 3.06516, -28.6585)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="buildings4"]
+transform = Transform3D(0.0717873, 0, -4.03318, 0, 5.90408, 0, 2.35635, 0, 0.122873, 11.9474, 1.7639, -65.2327)

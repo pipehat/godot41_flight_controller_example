@@ -1,0 +1,24 @@
+Enhancement Ideas
+=================
+- contrail particles from flaps when active
+- camera follow plane with slight delay to emphasize motion
+- cycle camera between modes
+	- behind
+	- side
+	- front (add a cockpit texture if I do this)
+- animate flap motion instead of instant rotation
+- ground & building collission
+	- toss up debris (billboard particles) on impacts
+	- "bounce" off of ground
+	- buildings and plane on fire if struck - for 10s maybe
+- retractable landing gears
+- adjustable speed
+- possible to land/take off
+- "win" the game by landing at airport
+- get some points by flying through rings
+- achievements (barrell roll, loop, fly inverted N secs, crashed, flew to space)
+- trend controls back toward neutral upright if no input
+- HUD controls for altimeter, speedometer, landing gear indicator, crash warning, stall warning
+- stall if pointed up (have to look this up - what causes stall)
+- health bar for plane - reduced by impacts
+	- plane explodes or crashes if out of health
