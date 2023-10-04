@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm3gpusw5c8cg"]
+[gd_scene load_steps=9 format=3 uid="uid://dp22r4pc4b1dd"]
 
-[ext_resource type="PackedScene" uid="uid://bbglp6seply6y" path="res://plane.tscn" id="1_p4yrd"]
-[ext_resource type="Script" path="res://plane.gd" id="2_h0fqm"]
+[ext_resource type="PackedScene" uid="uid://bbglp6seply6y" path="res://plane.tscn" id="1_22jnl"]
+[ext_resource type="Script" path="res://plane.gd" id="2_gnx5d"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h8emp"]
 
@@ -32,9 +32,9 @@ environment = SubResource("Environment_si7lc")
 [node name="sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00982607, 0.999952, 0, -0.999952, -0.00982607, -124.42, 242.899, 0)
 
-[node name="plane" parent="." instance=ExtResource("1_p4yrd")]
+[node name="plane" parent="." instance=ExtResource("1_22jnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18071, 7.88445, 0)
-script = ExtResource("2_h0fqm")
+script = ExtResource("2_gnx5d")
 
 [node name="Camera3D" type="Camera3D" parent="plane"]
 transform = Transform3D(1, 0, 0, 0, 0.99948, 0.0322306, 0, -0.0322306, 0.99948, -0.0556016, 0.872339, 5.01369)
@@ -76,29 +76,6 @@ radius = 5.0
 radial_segments = 5
 rings = 4
 material = SubResource("StandardMaterial3D_y1gh4")
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="HUD"]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 237.0
-offset_bottom = 104.0
-
-[node name="Label" type="Label" parent="HUD/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Simple flight control demo.
-Roll : left | right
-Pitch : up | down"
 
 [node name="buildings" type="Marker3D" parent="."]
 

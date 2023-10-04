@@ -7,8 +7,8 @@ const FLAP_NEUTRAL = PI/2
 const FLAP_UP = -PI/4
 const FLAP_DOWN = PI/4
 
-
 func _physics_process(delta):
+
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	var roll = -input_dir[0]
